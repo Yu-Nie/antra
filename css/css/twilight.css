@@ -58,10 +58,10 @@ section {
     border: none;
     width: 60%;
     float: left;
-    
+
 }
 
-.newSection{
+.newSection {
     float: right;
     box-sizing: border-box;
     border: 1px solid gray;
@@ -89,4 +89,20 @@ section {
 
 a {
     color: rgb(142, 195, 89);
+}
+
+#footer {
+    text-align: center;
+    padding: 3px;
+    background-color: rgb(142, 195, 89);
+    color: black;
+    bottom: 0;
+    height: 2em;
+    position: fixed;
+    font-size: small;
+    width: 60%;
+}
+
+body {
+    position: relative;
 }
