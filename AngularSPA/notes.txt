@@ -1,0 +1,54 @@
+Angular is made by Google, React by Facebook, Vue by independent company
+AngularJS was the initial version of angular, then Angular 2 came out in 2016 and we have been using it ever since
+React is more popular overall, but Angular is more popular with .NET teams/developers 
+New Version of Angular comes out every 6 months
+Angular guarantees long term support for a minimum of 18 months per release
+
+Similarities between C# and Angular:
+Controller      Component
+Views           Templates
+Attributes      Decorators
+Services        Services
+DI              DI
+Routing         Routing
+Filters         Route Guards
+Middleware      Interceptor
+C#              TypeScript          (Both invented by the same guy)
+
+Always use CMD/Terminal instead of Powershell
+
+Angular is based on modules:
+Application for Antra -> HCM (Human Capital Management)
+Recruiting -> hire candidate, fire candidate, follow up with candidate, schedule interview, provide feedback
+Sales -> Vendor submission, follow up with client, check interviews
+Reporting -> Consultant list, active consultants list, placed consultants list
+Timesheet -> Create timesheet, approve timesheet, timesheet codes list
+Authentication -> Login, Register, Forgot password, log out 
+
+All modules must be created inside the src folder
+
+The component is the main building block of an Angular application. A component contains the definition of the view and the data that defines how the view looks and behaves. The Angular components are plan javascript classes and defined using the @component decorator. This Decorator provides the component with the view to display and metadata about the class.
+
+The component passes the data to the view using a process called data binding. This is done by binding the DOM elements to component properties. Binding can be used to display component class property values to the user, change element styles, respond to a user event, etc. 
+
+Angular Pipes are used to transform and format data. For example the Date pipe formats date information according to locale rules. We can pass arguments to pipes and chain pipes. Angular also allows us to create custom pipes.
+
+An Angular Decorator is a function which we use to attach metadata to a class, method, accessor, property, or parameter. We apply the decorator using the form @expression where expression is the name of the decorator.
+
+@NgModule decorator defines the class as an Angular Module and adds the required metadata to it.
+
+@Component decorator which defines a class as an Angular component and attached the required metadata to it.
+
+Angular will not recognize your class as an Angular component unless you decorate it with the @component decorator.
+
+@Injectable decorator has two purposes:
+Show Angular that this class needs a dependency, the Angular compiler will generate the necessary metadata to create the class's dependencies.
+Secondly, using the providedIn array we inform the dependency injection system how to provide the service.
+
+@Directive decorator which marks a class as an Angular Directive. Angular Directives help us to change the appearance, behavior, or layout of a DOM element. 
+
+@pipe decorator which marks the class as an Angular Pipe and supplies configuration metadata.
+
+@Input decorator marks the property as the input property. This means it can receive data from a parent component. The parent component can use the property binding to bind it to a component property. Whenever the value in the parent component changes, angular will update the value in the child component. 
+
+@Output decorator marks the property as the Output property. What this does is initialize it as an eventTransmitter. The child component raises an event and passes data as the argument to said event and the parent component listens to events using event binding and reads the data.
