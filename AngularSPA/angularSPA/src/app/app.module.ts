@@ -8,12 +8,17 @@ import { CoreModule } from './Core/core.module';
 import { SharedModule } from './Shared/shared.module';
 import { MovieDetailsComponent } from './Public/movie-details.component';
 import { CastDetailsComponent } from './Public/cast-details.component';
+import { MoviesComponent } from './Public/movies.component';
+import { GenresComponent } from './Public/genres.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     MovieDetailsComponent,
-    CastDetailsComponent
+    CastDetailsComponent,
+    MoviesComponent,
+    GenresComponent
   ],
   imports: [
     BrowserModule,
