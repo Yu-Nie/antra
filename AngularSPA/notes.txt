@@ -52,3 +52,13 @@ Secondly, using the providedIn array we inform the dependency injection system h
 @Input decorator marks the property as the input property. This means it can receive data from a parent component. The parent component can use the property binding to bind it to a component property. Whenever the value in the parent component changes, angular will update the value in the child component. 
 
 @Output decorator marks the property as the Output property. What this does is initialize it as an eventTransmitter. The child component raises an event and passes data as the argument to said event and the parent component listens to events using event binding and reads the data.
+
+
+CORS Policy: cross origin resource sharing Policy
+
+what does cross origin mean? simply mean a different domain name trying to access resource or data from another domain name
+
+All the CORS policy does is add a special header to the API's response so that the browser will allow the request to occur
+
+CORS Policy is a browser requirement, the API does not care about CORS, but it is needed so that the browser can allow 
+AJAX requests to happen
