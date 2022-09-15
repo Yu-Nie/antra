@@ -11,7 +11,7 @@ export class GenreService {
   constructor(private httpClient: HttpClient) { }
 
   getAllGenres():Observable<Genre[]>{
-    return this.httpClient.get<Genre[]>("https://yumovieshop.azurewebsites.net/api/Genres");
+    return this.httpClient.get<Genre[]>("https://localhost:7062/api/Genres");
   }
 
   addGenre(genre:Genre){

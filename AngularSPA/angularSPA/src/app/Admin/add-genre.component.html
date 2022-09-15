@@ -1,1 +1,33 @@
-<p>add-genre works!</p>
+<!-- Template driven form -->
+
+<div class="container" style="background-color: white; width: 60%;">
+    <div class="card" style="float: center;">
+        <h4 class="card-title" style="text-align: center;">Add Genre Form </h4>
+        <div class="alert alert-primary" role="alert" *ngIf="flag">
+            Genre Added Successfully!
+        </div>
+
+        <div class="d-flex justify-content-center">
+            <form #addGenreForm="ngForm" (submit)="addGenre(addGenreForm)">
+                <div class="form-group">
+                    <label for="name">Genre Name: </label>
+                    <input type="text" [(ngModel)]="name" name="name" class="form-control-inline" style="margin: 12px"
+                        placeholder="Name" required />
+                </div>
+
+                <div class="form-group">
+                    <input type="checkbox" [(ngModel)]="tnc" name="tnc"
+                        style="margin-top: 12px; margin-bottom: 16px; margin-right: 4px;" required />I have read and
+                    accept the terms and conditions.
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="Add Genre" style="margin-bottom: 12px;"
+                        [disabled]="!addGenreForm.valid">
+                    <input type="button" value="Clear Form" style="margin-bottom: 12px; margin-left: 12px;"
+                        (click)="resetForm(addGenreForm)" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

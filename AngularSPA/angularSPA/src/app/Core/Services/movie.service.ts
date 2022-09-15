@@ -11,11 +11,11 @@ export class MovieService {
   constructor(private httpClient:HttpClient) { }
   
   getTopGrossingMovies():Observable<Movie[]>{
-    return this.httpClient.get<Movie[]>('https://yumovieshop.azurewebsites.net/');
+    return this.httpClient.get<Movie[]>('https://localhost:7062/api/Movies/top-grossing');
   }
 
   getMovieDetails(id:number){
-
+    
   }
 
   getMoviesByGenre(genreId:number){
