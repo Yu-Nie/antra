@@ -22,16 +22,16 @@ export class RegisterComponent implements OnInit {
       confirmPassword: ['', Validators.required],
       DateOfBirth: ['', Validators.required]
     },
-    {
-      Validators: this.customValidator.MatchPassword('password', 'confirmPassword'),
-    });
+      {
+        Validators: this.customValidator.MatchPassword('password', 'confirmPassword'),
+      });
   }
 
   get RegisterFormControl() {
     return this.registerForm.controls;
   }
 
-  onSubmit() {
+  Register() {
     this.submitted = true;
     if (this.registerForm.valid) {
       alert('Form Submitted Successfully!! \n Check the submitted values in the Browser Console');

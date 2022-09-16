@@ -3,57 +3,74 @@
         <div class="col-md-8 mx-auto">
             <div class="card" style="margin-bottom: 88px;">
                 <div class="card-header">
+                    <div class="alert alert-primary" role="alert" *ngIf="submitted">
+                        You have Registered Successfully!
+                    </div>
                     <h3>Angular Reactive Form</h3>
                 </div>
                 <div class="card-body">
-                    <form class="form" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                    <form class="form" [formGroup]="registerForm" (ngSubmit)="Register()">
                         <div class="form-group">
                             <label for="firstName">First Name</label>
                             <input type="text" class="form-control" name="firstName" formControlName="firstName" />
-                            <span class="text-danger" *ngIf="(RegisterFormControl['firstName'].touched || submitted) && (RegisterFormControl['firstName'].errors?.['required'])">
-                                First name is required
+                            <span class="text-danger"
+                                *ngIf="(RegisterFormControl['firstName'].touched || submitted) && (RegisterFormControl['firstName'].errors?.['required'])">
+                                First Name is required
                             </span>
                         </div>
                         <div class="form-group">
                             <label for="lastName">Last Name</label>
                             <input type="text" class="form-control" name="lastName" formControlName="lastName" />
-                            <span class="text-danger" *ngIf="(RegisterFormControl['lastName'].touched || submitted) && (RegisterFormControl['lastName'].errors?.['required'])">
-                                Last name is required
+                            <span class="text-danger"
+                                *ngIf="(RegisterFormControl['lastName'].touched || submitted) && (RegisterFormControl['lastName'].errors?.['required'])">
+                                Last Name is required
                             </span>
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <span class="text-danger" *ngIf="(RegisterFormControl['email'].touched || submitted) && (RegisterFormControl['email'].errors?.['required'])">
+                            <input type="email" class="form-control" name="email" formControlName="email" />
+                            <span class="text-danger"
+                                *ngIf="(RegisterFormControl['email'].touched || submitted) && (RegisterFormControl['email'].errors?.['required'])">
                                 Email is required
                             </span>
-                            <input type="email" class="form-control" name="email" formControlName="email" />
-                            <span class="text-danger" *ngIf="(RegisterFormControl['email'].touched || submitted) && (RegisterFormControl['email'].errors?.['email'])">
-                                Please enter a valid email
+                            <span class="text-danger"
+                                *ngIf="(RegisterFormControl['email'].touched || submitted) && (RegisterFormControl['email'].errors?.['email'])">
+                                Please Enter a Valid Email Address
                             </span>
                         </div>
                         <div class="form-group">
                             <label for="password">Password</label>
                             <input type="password" class="form-control" name="password" formControlName="password" />
-                            <span class="text-danger" *ngIf="(RegisterFormControl['password'].touched || submitted) && (RegisterFormControl['password'].errors?.['required'])">
+                            <span class="text-danger"
+                                *ngIf="(RegisterFormControl['password'].touched || submitted) && (RegisterFormControl['password'].errors?.['required'])">
                                 Password is required
                             </span>
-                            <span class="text-danger" *ngIf="(RegisterFormControl['password'].touched || submitted) && (RegisterFormControl['password'].errors?.['invalidPassword'])">
-                                Please make sure your password has at least one uppercase letter, one lowercase letter and one number
+                            <span class="text-danger"
+                                *ngIf="(RegisterFormControl['password'].touched || submitted) && (RegisterFormControl['password'].errors?.['invalidPassword'])">
+                                Please make sure your password includes a minimum of 8 characters, at least 1 uppercase
+                                letter, 1 lowercase letter, and a number
                             </span>
                         </div>
                         <div class="form-group">
                             <label for="confirmPassword">Confirm Password</label>
-                            <input type="password" class="form-control" name="confirmPassword" formControlName="confirmPassword" />
-                            <span class="text-danger" *ngIf="(RegisterFormControl['confirmPassword'].touched || submitted) && (RegisterFormControl['confirmPassword'].errors?.['confirmPassword'])">
-                                confirmPassword is required
+                            <input type="password" class="form-control" name="confirmPassword"
+                                formControlName="confirmPassword" />
+                            <span class="text-danger"
+                                *ngIf="(RegisterFormControl['confirmPassword'].touched || submitted) && (RegisterFormControl['confirmPassword'].errors?.['required'])">
+                                Confirm Password is required
                             </span>
-                            <span class="text-danger" *ngIf="(RegisterFormControl['confirmPassword'].touched || submitted) && (RegisterFormControl['confirmPassword'].errors?.['passwordMismatch'])">
-                                password not matching, type again
+                            <span class="text-danger"
+                                *ngIf="(RegisterFormControl['confirmPassword'].touched || submitted) && (RegisterFormControl['confirmPassword'].errors?.['passwordMismatch'])">
+                                Passwords do not match
                             </span>
                         </div>
                         <div class="form-group">
                             <label for="DateOfBirth">Date Of Birth</label>
                             <input type="date" class="form-control" name="DateOfBirth" formControlName="DateOfBirth" />
+                            <span class="text-danger"
+                                *ngIf="(RegisterFormControl['DateOfBirth'].touched || submitted) && (RegisterFormControl['DateOfBirth'].errors?.['required'])">
+                                Date of Birth is required
+                            </span>
                         </div>
                         <div class="form-group">
                             <button type="submit" class="btn btn-success" style="margin-top: 16px;">Register</button>

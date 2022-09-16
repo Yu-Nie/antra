@@ -1,5 +1,104 @@
-<p>movie-details works!</p>
 
-<!-- <div *ngFor="let cast of movieDetails.casts">
-    {{cast.id}}
-</div> -->
+<div [ngStyle]="{backgroundImage:'url({{movieDetails.posterUrl}})'}" >
+    <div class="row">
+        <div class="col-md-3 offset-2">
+            <div>
+                <img src="{{movieDetails.posterUrl}}" class="card-img-top" />
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="row mt-2">
+                <div class="col-12">
+                    <h1 class="text-white">{{movieDetails.title}}</h1>
+                    <small class="text-muted"> {{movieDetails.tagline}} </small>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-4 text-secondary font-weight-bold mt-2">
+                    "{{movieDetails.runTime}}" m |"{{movieDetails.releaseDate}}"
+                </div>
+
+                <div class="col-8">
+                    <div *ngFor="let genre of movieDetails.genres">
+                        {{genre.name}}
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-4 mt-3">
+                    <h4>
+                        <span class="badge bg-success">"{{movieDetails.rating}}"</span>
+                    </h4>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 text-light mt-2">
+                    "{{movieDetails.overview}}"
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h5>MOVIE FACTS</h5>
+        <hr>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+                <i class="bi bi-calendar-week"></i> Release Date
+                <span class="badge rounded-pill bg-dark">{{movieDetails.releaseDate}}.Value.ToString("MMM
+                    dd,yyyy")</span>
+            </li>
+            <li class="list-group-item">
+                <i class="bi bi-hourglass-split"></i> Run Time
+                <span class="badge rounded-pill bg-dark">{{movieDetails.runTime}} m</span>
+            </li>
+            <li class="list-group-item">
+                <i class="bi bi-cash-coin"></i> Box Office
+                <span class="badge rounded-pill bg-dark">${{movieDetails.revenue.toFixed(2)}}</span>
+            </li>
+            <li class="list-group-item">
+                <i class="bi bi-currency-dollar"></i> Budget
+                <span class="badge rounded-pill bg-dark">${{movieDetails.budget.toFixed(2)}}
+                </span>
+            </li>
+        </ul>
+        <hr />
+        <h5>TRAILERS</h5>
+        <ul class="list-group list-group-flush">
+            <div *ngFor="let trailer of movieDetails.trailers">
+                <li class="list-group-item">
+                    <a href="@trailer.TrailerUrl" class="text-decoration-none"> {{trailer.name}}</a>
+                </li>
+            </div>
+        </ul>
+        <hr>
+    </div>
+
+
+    <div class="col-6 offset-1">
+        <h5>CAST</h5>
+        <hr />
+        <table class="table">
+            <tbody>
+                <div *ngFor="let cast of movieDetails.casts">
+                    <tr>
+                        <td>
+                            <img src="{{cast.profilePath}}" class="rounded-circle" alt={{cast.name}} width="60"
+                                height="80" />
+                        </td>
+                        <td> {{cast.name}} </td>
+                        <td> {{cast.character}}</td>
+                    </tr>
+                </div>
+            </tbody>
+        </table>
+
+    </div>
+</div>
