@@ -12,6 +12,8 @@ import { MoviesComponent } from './Public/movies.component';
 import { GenresComponent } from './Public/genres.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AuthGuard } from './Core/Guards/auth.guard';
+import { AdminGuard } from './Core/Guards/admin.guard';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    AuthGuard,
+    AdminGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

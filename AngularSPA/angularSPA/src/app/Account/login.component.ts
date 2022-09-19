@@ -13,7 +13,10 @@ import { HttpErrorResponse } from '@angular/common/http';
 export class LoginComponent implements OnInit {
 
   invalidLogin: boolean = false;
-  loginData: Login;
+  loginData: Login = {
+    email: "",
+    password: "",
+  };
   flag:boolean = false;
   constructor(private accountService: AccountService, private router:Router) { }
 
@@ -21,11 +24,16 @@ export class LoginComponent implements OnInit {
   }
 
   Login(loginForm: NgForm){
-    this.loginData.email = loginForm.value.email;
-    this.loginData.password = loginForm.value.password;
-    this.accountService.Login(this.loginData).subscribe(L => {
-      this.router.navigateByUrl('/'),
-      (err: HttpErrorResponse) => {
+    this.loginData.email = loginForm.controls['email'].value;
+    this.loginData.password = loginForm.controls['password'].value;
+    this.accountService.Login(this.loginData).subscribe(data => {
+      if (data){
+        this.flag = true;
+        setTimeout(() => {
+          this.router.navigateByUrl('/');
+        }, 5000);
+      }
+      else{
         this.invalidLogin = true;
       }
     });
